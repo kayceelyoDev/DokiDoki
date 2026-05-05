@@ -19,7 +19,8 @@ import {
   ShieldCheck, 
   Timer, 
   CheckSquare,
-  Sparkles
+  Sparkles,
+  FileArchive
 } from 'lucide-react';
 import { Tool } from './types';
 import { WordCounter } from './components/tools/WordCounter';
@@ -35,6 +36,7 @@ import { ImageResizer } from './components/tools/ImageResizer';
 import { BackgroundRemover } from './components/tools/BackgroundRemover';
 
 import { PdfTool } from './components/tools/PdfTool';
+import { FileCompressor } from './components/tools/FileCompressor';
 import { ColorPicker } from './components/tools/ColorPicker';
 
 import { GrammarChecker } from './components/tools/GrammarChecker';
@@ -48,6 +50,14 @@ export const TOOLS: Tool[] = [
     category: 'document',
     icon: Sparkles,
     component: GrammarChecker,
+  },
+  {
+    id: 'file-compressor',
+    name: 'File Compressor',
+    description: 'Compress images and PDFs to a smaller file size.',
+    category: 'document',
+    icon: FileArchive,
+    component: FileCompressor,
   },
   {
     id: 'pdf-merge',
