@@ -94,12 +94,12 @@ export default function App() {
   ];
 
   return (
-    <div className={`min-h-screen transition-colors duration-300 font-sans ${isDark ? 'dark bg-background text-foreground' : 'bg-background text-foreground'}`}>
+    <div className={`min-h-[100dvh] transition-colors duration-300 font-sans ${isDark ? 'dark bg-background text-foreground' : 'bg-background text-foreground'}`}>
       <Toaster position="top-center" />
-      <div className="flex flex-col lg:flex-row h-screen overflow-hidden">
+      <div className="flex flex-col lg:flex-row min-h-[100dvh]">
         
         {/* Sidebar */}
-        <aside className="hidden lg:flex w-[240px] bg-card border-r border-border flex-col p-6 shrink-0 z-10 relative">
+        <aside className="hidden lg:flex w-[240px] bg-card border-r border-border flex-col p-6 shrink-0 z-10 sticky top-0 h-[100dvh] overflow-y-auto">
           <div 
             className="flex items-center gap-3 mb-10 cursor-pointer" 
             onClick={() => { setActiveToolId(null); setSelectedCategory('all'); }}
@@ -144,7 +144,7 @@ export default function App() {
         <div className="flex-1 flex flex-col min-w-0">
           
           {/* Header */}
-          <header className="h-[72px] bg-card border-b border-border flex items-center justify-between px-4 sm:px-8 shrink-0 z-10 relative gap-4">
+          <header className="h-[72px] bg-card border-b border-border flex items-center justify-between px-4 sm:px-8 shrink-0 z-20 sticky top-0 gap-4">
             <div className="flex items-center gap-3 w-full max-w-[400px]">
               <div className="lg:hidden">
                 <Sheet>
@@ -227,8 +227,8 @@ export default function App() {
             </div>
           </header>
 
-          {/* Scrolling Content */}
-          <main className="flex-1 overflow-y-auto p-4 sm:p-8 bg-background">
+          {/* Content */}
+          <main className="flex-1 p-4 sm:p-8 bg-background">
             <div className="max-w-[1200px] mx-auto">
               <AnimatePresence mode="wait">
                 {!activeToolId ? (
